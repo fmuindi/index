@@ -1,645 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mathare 7-Days Mega Crusade</title>
-  <meta name="description" content="Support the Mathare 7-Days Mega Crusade outreach and help bring hope, food, and the Gospel to Mathare, Nairobi." />
+  <meta name="x-apple-disable-message-reformatting" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Mathare Mega Crusade — June 2026</title>
   <style>
-    :root {
-      --bg: #111111;
-      --card: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666666;
-      --accent: #c0392b;
-      --accent-dark: #9f2f24;
-      --green: #1a5c2a;
-      --green-soft: #f4f9f5;
-      --line: #e9e9e9;
-      --shadow: 0 10px 30px rgba(0,0,0,0.12);
-      --radius: 14px;
-      --radius-sm: 10px;
-      --maxw: 680px;
-    }
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+    table { border-collapse: collapse !important; }
+    body { margin: 0 !important; padding: 0 !important; width: 100% !important; height: 100% !important; background-color: #efefef; }
 
-    * {
-      box-sizing: border-box;
-    }
+    .wrapper { width: 100%; background-color: #efefef; }
+    .container { width: 100%; max-width: 680px; margin: 0 auto; background-color: #ffffff; }
+    .px { padding-left: 28px; padding-right: 28px; }
+    .pb { padding-bottom: 28px; }
+    .pt { padding-top: 28px; }
+    .section-space { height: 24px; line-height: 24px; font-size: 24px; }
+    .divider { border-top: 1px solid #e8e8e8; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at top, rgba(192,57,43,0.12), transparent 35%),
-        #0f0f10;
-      color: var(--text);
-      font-family: Georgia, serif;
-      line-height: 1.6;
-      padding: 24px 14px 40px;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 14px;
-    }
-
-    .copy-btn {
-      border: 0;
-      background: #202124;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font: 600 13px/1 Arial, sans-serif;
-      cursor: pointer;
-      transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
-    }
-
-    .copy-btn:hover {
-      background: #2b2c30;
-      transform: translateY(-1px);
-    }
-
-    .copy-btn:active {
-      transform: translateY(0);
-    }
-
-    .email {
-      background: var(--card);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .hero {
-      position: relative;
-      min-height: 420px;
-      overflow: hidden;
-      background: #000;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.78));
-    }
-
-    .hero-content {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 26px 24px 28px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .hero-tag {
+    .eyebrow {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 7px 15px;
-      border-radius: 999px;
-      font: 700 11px/1.2 Arial, sans-serif;
-      letter-spacing: 1.8px;
+      background-color: #c63d2d;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      border-radius: 999px;
+      padding: 10px 18px;
     }
 
-    .hero-title {
+    .h1 {
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: 38px;
-      line-height: 1.15;
-      margin: 0 0 8px;
-    }
-
-    .hero-sub {
-      font: 500 14px/1.5 Arial, sans-serif;
-      color: rgba(255,255,255,0.88);
-      letter-spacing: 0.5px;
-    }
-
-    .body {
-      padding: 30px 24px;
-    }
-
-    .greeting,
-    .sign-off,
-    .cta-text {
-      font-size: 17px;
-      color: #2c2c2c;
-      margin: 0 0 18px;
-    }
-
-    .flame-quote {
-      margin: 24px 0;
-      padding: 16px 18px;
-      border-left: 4px solid var(--accent);
-      background: #fff7f5;
-      border-radius: 0 10px 10px 0;
-    }
-
-    .flame-quote p {
+      line-height: 44px;
+      font-weight: 700;
+      color: #ffffff;
       margin: 0;
+    }
+
+    .subhead {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 21px;
+      color: #f5f5f5;
+      letter-spacing: 0.4px;
+    }
+
+    .body-copy {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 18px;
+      line-height: 31px;
+      color: #363636;
+    }
+
+    .label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c63d2d;
+    }
+
+    .quote-box {
+      background-color: #f8efec;
+      border-left: 4px solid #d84a3a;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .quote-text {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      line-height: 36px;
+      color: #2f2f2f;
       font-style: italic;
     }
 
-    .section-label {
-      margin: 28px 0 12px;
-      font: 700 11px/1.4 Arial, sans-serif;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 10px 0 20px;
-    }
-
-    .stat {
-      background: var(--green);
-      border-radius: 12px;
-      padding: 16px 10px;
-      text-align: center;
+    .stat-card {
+      background-color: #19692b;
+      border-radius: 14px;
     }
 
     .stat-num {
-      color: #fff;
-      font: 700 24px/1.1 Arial, sans-serif;
-      margin-bottom: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      line-height: 32px;
+      font-weight: 700;
+      color: #ffffff;
     }
 
     .stat-lbl {
-      color: #bce9cf;
-      font: 700 10px/1.35 Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #d1ead7;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    .cost-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 0 0 20px;
     }
 
     .cost-card {
-      border: 2px solid var(--green);
-      border-radius: 12px;
-      text-align: center;
-      padding: 16px 12px;
-      background: #fff;
+      border: 2px solid #19692b;
+      border-radius: 14px;
+      background-color: #ffffff;
     }
 
     .cost-amt {
-      color: var(--green);
-      font: 700 30px/1 Arial, sans-serif;
-      margin-bottom: 6px;
-    }
-
-    .cost-desc {
-      color: #555;
-      font: 700 11px/1.4 Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
-
-    .video-thumb {
-      position: relative;
-      display: block;
-      border-radius: 12px;
-      overflow: hidden;
-      text-decoration: none;
-      background: #000;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-    }
-
-    .video-thumb img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      opacity: 0.78;
-    }
-
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: rgba(192,57,43,0.94);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-    }
-
-    .play-btn svg {
-      margin-left: 4px;
-    }
-
-    .video-label {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 14px;
-      text-align: center;
-      color: #fff;
-      font: 700 13px/1.4 Arial, sans-serif;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.55);
-      padding: 0 14px;
-    }
-
-    .report-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      background: var(--green-soft);
-      border: 2px solid var(--green);
-      border-radius: 12px;
-      padding: 16px;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .report-btn:hover {
-      transform: translateY(-1px);
-      background: #ecf6ee;
-    }
-
-    .report-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .report-text .rt {
-      color: var(--green);
-      font: 700 14px/1.35 Arial, sans-serif;
-    }
-
-    .report-text .rs {
-      margin-top: 4px;
-      color: #555;
-      font: 500 12px/1.4 Arial, sans-serif;
-    }
-
-    .report-arrow {
-      margin-left: auto;
-      color: var(--green);
-      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 34px;
+      line-height: 38px;
       font-weight: 700;
+      color: #19692b;
     }
 
-    .divider {
-      border: 0;
-      border-top: 1px solid var(--line);
-      margin: 26px 0;
+    .cost-lbl {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #5b5b5b;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    .cta-section {
-      text-align: center;
+    .report-box {
+      border: 2px solid #19692b;
+      border-radius: 16px;
+      background-color: #f3f8f3;
     }
 
-    .donate-btn {
+    .report-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+      color: #19692b;
+    }
+
+    .report-sub {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #5b5b5b;
+    }
+
+    .cta {
       display: inline-block;
+      background-color: #c63d2d;
+      color: #ffffff !important;
       text-decoration: none;
-      background: var(--accent);
-      color: #fff;
-      padding: 16px 34px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 17px;
+      font-weight: 700;
       border-radius: 999px;
-      font: 700 16px/1 Arial, sans-serif;
-      letter-spacing: 0.4px;
-      transition: background 0.15s ease, transform 0.15s ease;
-      box-shadow: 0 10px 20px rgba(192,57,43,0.25);
+      padding: 18px 34px;
     }
 
-    .donate-btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
+    .cta-sub {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+      color: #7a7a7a;
     }
 
-    .donate-sub {
-      margin-top: 12px;
-      color: #777;
-      font: 500 12px/1.5 Arial, sans-serif;
+    .footer-green {
+      background-color: #19692b;
     }
 
-    .motto-footer {
-      background: var(--green);
-      text-align: center;
-      padding: 18px 24px;
+    .footer-dark {
+      background-color: #111111;
     }
 
-    .motto-text {
-      color: #fff;
-      font-size: 15px;
+    .footer-motto {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      line-height: 24px;
+      color: #ffffff;
       font-style: italic;
-      margin: 0;
     }
 
-    .email-footer {
-      background: #121212;
-      text-align: center;
-      padding: 18px 24px 22px;
+    .footer-copy {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 20px;
+      color: #a8a8a8;
     }
 
-    .email-footer p {
-      margin: 0;
-      color: #9a9a9a;
-      font: 500 11px/1.7 Arial, sans-serif;
+    .mobile-full {
+      width: 50%;
     }
 
-    .notice {
-      margin-top: 12px;
-      text-align: center;
-      color: #d6d6d6;
-      font: 500 12px/1.5 Arial, sans-serif;
-    }
-
-    @media (max-width: 640px) {
-      body {
-        padding: 14px 10px 28px;
-      }
-
-      .hero,
-      .hero img {
-        min-height: 360px;
-        height: 360px;
-      }
-
-      .hero-content {
-        padding: 20px 16px 22px;
-      }
-
-      .hero-title {
-        font-size: 30px;
-      }
-
-      .hero-sub {
-        font-size: 13px;
-      }
-
-      .body {
-        padding: 22px 16px;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cost-row {
-        grid-template-columns: 1fr;
-      }
-
-      .greeting,
-      .sign-off,
-      .cta-text {
-        font-size: 16px;
-      }
-
-      .donate-btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .report-btn {
-        align-items: flex-start;
-      }
-
-      .report-arrow {
-        display: none;
-      }
+    @media screen and (max-width: 640px) {
+      .container { width: 100% !important; }
+      .px { padding-left: 16px !important; padding-right: 16px !important; }
+      .h1 { font-size: 30px !important; line-height: 36px !important; }
+      .body-copy { font-size: 17px !important; line-height: 28px !important; }
+      .quote-text { font-size: 18px !important; line-height: 30px !important; }
+      .report-title { font-size: 20px !important; line-height: 26px !important; }
+      .mobile-full { display: block !important; width: 100% !important; }
+      .mobile-gap { display: block !important; height: 12px !important; line-height: 12px !important; font-size: 12px !important; }
+      .hero-img { height: auto !important; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="email">
-      <section class="hero">
-        <img src="https://ik.imagekit.io/vddpcxj7e/FNM06246.JPG?tr=f-auto,q-auto,w-1200" alt="Mathare Crusade gathering" />
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <div class="hero-tag">June, 2026 · Mathare, Nairobi</div>
-          <h1 class="hero-title">Mathare 7-Days<br />Mega Crusade</h1>
-          <div class="hero-sub">Firebrand Nation | Eternal Life's Restoration Outreach</div>
-        </div>
-      </section>
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="wrapper">
+    <tr>
+      <td align="center" style="padding: 24px 12px;">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="container">
 
-      <main class="body">
-        <p class="greeting"><strong>Dear Friend,</strong></p>
+          <!-- HERO -->
+          <tr>
+            <td style="background-color:#111111;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <img
+                      src="https://ik.imagekit.io/vddpcxj7e/FNM06246.JPG?tr=f-auto,q-auto,w-1200"
+                      alt="Mathare Mega Crusade"
+                      width="680"
+                      class="hero-img"
+                      style="width:100%; max-width:680px; height:auto; border-radius: 18px 18px 0 0;"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: 18px 16px 8px 16px; background-color:#ffffff;">
+                    <span class="eyebrow">June, 2026 · Mathare, Nairobi</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="px" style="background-color:#ffffff; padding-top: 18px;">
+                    <div style="font-family:Georgia, 'Times New Roman', serif; font-size:40px; line-height:46px; font-weight:700; color:#222222;">
+                      Mathare 7-Day<br />Mega Crusade
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" class="px" style="background-color:#ffffff; padding-top: 10px; padding-bottom: 4px;">
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:22px; color:#666666; letter-spacing:0.4px;">
+                      Firebrand Nation | Eternal Life's Restoration Outreach
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-        <p class="greeting">
-          Mathare is one of Nairobi's most densely populated informal settlements — a place filled with people who carry extraordinary resilience, and who deserve to hear a message of hope, love, and transformation.
-        </p>
+          <!-- BODY -->
+          <tr>
+            <td class="px pt pb" style="background-color:#ffffff;">
+              <div class="body-copy" style="font-weight:700; margin-bottom:18px;">Dear Friend,</div>
 
-        <p class="greeting">
-          That is exactly what we are going back to do on <strong>June, 2026</strong>. And we need you standing with us.
-        </p>
+              <div class="body-copy" style="margin-bottom:22px;">
+                Mathare is one of Nairobi's most densely populated informal settlements — a place filled with people who carry extraordinary resilience, and who deserve to hear a message of hope, love, and transformation.
+              </div>
 
-        <div class="flame-quote">
-          <p>
-            “For just $8, one life is reached. For $38, a soul is won. Your gift — any size — joins with others to become something unstoppable.”
-          </p>
-        </div>
+              <div class="body-copy" style="margin-bottom:26px;">
+                That is exactly what we are going back to do on <strong>June, 2026</strong>. And we need you standing with us.
+              </div>
 
-        <div class="section-label">What your giving did last time</div>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="quote-box" style="margin-bottom:30px;">
+                <tr>
+                  <td style="padding:20px 22px;">
+                    <div class="quote-text">
+                      “For just $8, one life is reached. For $38, a soul is won. Your gift — any size — joins with others to become something unstoppable.”
+                    </div>
+                  </td>
+                </tr>
+              </table>
 
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-num">5,136</div>
-            <div class="stat-lbl">Reached with Gospel</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">1,097</div>
-            <div class="stat-lbl">Souls won</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">450</div>
-            <div class="stat-lbl">Salvations</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">875</div>
-            <div class="stat-lbl">One-on-one evangelism</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">345</div>
-            <div class="stat-lbl">Volunteers mobilised</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">1,566</div>
-            <div class="stat-lbl">People fed</div>
-          </div>
-        </div>
+              <div class="label" style="margin-bottom:14px;">What your giving did last time</div>
 
-        <div class="cost-row">
-          <div class="cost-card">
-            <div class="cost-amt">$8</div>
-            <div class="cost-desc">Cost to reach one soul</div>
-          </div>
-          <div class="cost-card">
-            <div class="cost-amt">$38</div>
-            <div class="cost-desc">Cost per soul won</div>
-          </div>
-        </div>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">5,136</div>
+                    <div class="stat-lbl">Reached with Gospel</div>
+                  </td>
+                </tr>
+                <tr><td style="height:10px; line-height:10px; font-size:10px;"></td></tr>
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">1,097</div>
+                    <div class="stat-lbl">Souls Won</div>
+                  </td>
+                </tr>
+                <tr><td style="height:10px; line-height:10px; font-size:10px;"></td></tr>
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">450</div>
+                    <div class="stat-lbl">Salvations</div>
+                  </td>
+                </tr>
+                <tr><td style="height:10px; line-height:10px; font-size:10px;"></td></tr>
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">875</div>
+                    <div class="stat-lbl">One-on-One Evangelism</div>
+                  </td>
+                </tr>
+                <tr><td style="height:10px; line-height:10px; font-size:10px;"></td></tr>
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">345</div>
+                    <div class="stat-lbl">Volunteers Mobilised</div>
+                  </td>
+                </tr>
+                <tr><td style="height:10px; line-height:10px; font-size:10px;"></td></tr>
+                <tr>
+                  <td class="stat-card" align="center" style="padding:18px 12px;">
+                    <div class="stat-num">1,566</div>
+                    <div class="stat-lbl">People Fed</div>
+                  </td>
+                </tr>
+              </table>
 
-        <div class="section-label">Watch the impact video</div>
-        <a href="https://vimeo.com/1179909099" target="_blank" rel="noopener noreferrer" class="video-thumb">
-          <img src="https://ik.imagekit.io/vddpcxj7e/FNM06246.JPG?tr=f-auto,q-auto,w-800" alt="Watch Mathare Mega Crusade highlights video" />
-          <div class="play-btn">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-              <polygon points="5,3 19,12 5,21"></polygon>
-            </svg>
-          </div>
-          <div class="video-label">Watch: Mathare Mega Crusade Highlights</div>
-        </a>
+              <div class="section-space">&nbsp;</div>
 
-        <div class="section-label">Read the full impact report</div>
-        <a href="https://drive.google.com/file/d/1Yypg84_Vbr0TV9YYf2hnBMlKbAZPnp-O/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="report-btn">
-          <div class="report-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-            </svg>
-          </div>
-          <div class="report-text">
-            <div class="rt">Mathare Mega Crusade — Full Impact Report</div>
-            <div class="rs">Click to open and download the report</div>
-          </div>
-          <div class="report-arrow">→</div>
-        </a>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="mobile-full" valign="top" style="width:50%; padding-right:6px;">
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="cost-card">
+                      <tr>
+                        <td align="center" style="padding:20px 12px;">
+                          <div class="cost-amt">$8</div>
+                          <div class="cost-lbl">Cost to Reach One Soul</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="mobile-gap" style="width:12px;"></td>
+                  <td class="mobile-full" valign="top" style="width:50%; padding-left:6px;">
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="cost-card">
+                      <tr>
+                        <td align="center" style="padding:20px 12px;">
+                          <div class="cost-amt">$38</div>
+                          <div class="cost-lbl">Cost per Soul Won</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
-        <hr class="divider" />
+              <div class="section-space">&nbsp;</div>
 
-        <section class="cta-section">
-          <p class="cta-text">
-            We are believing for even greater impact this March. Will you partner with us? Every dollar makes a real difference in a real life.
-          </p>
-          <a
-            href="https://secure.givelively.org/donate/eternal-lifes-restoration-outreach"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="donate-btn"
-          >
-            Give Now — Make a Difference
-          </a>
-          <p class="donate-sub">Secure donation via Give Lively · All amounts welcome</p>
-        </section>
+              <div class="label" style="margin-bottom:14px;">Watch the impact video</div>
 
-        <hr class="divider" />
+              <!-- Email-safe video block -->
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:30px;">
+                <tr>
+                  <td>
+                    <a href="https://vimeo.com/1179909099" target="_blank" style="text-decoration:none;">
+                      <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#000000; border-radius:16px; overflow:hidden;">
+                        <tr>
+                          <td style="position:relative;">
+                            <img
+                              src="https://ik.imagekit.io/vddpcxj7e/FNM06246.JPG?tr=f-auto,q-auto,w-1200"
+                              alt="Watch Mathare Mega Crusade Highlights"
+                              width="624"
+                              style="width:100%; height:auto; display:block;"
+                            />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" style="padding:16px 16px 20px 16px;">
+                            <div style="display:inline-block; background-color:#c63d2d; color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:15px; line-height:15px; font-weight:700; border-radius:999px; padding:14px 24px;">
+                              ▶ Watch the Highlights Video
+                            </div>
+                            <div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:20px; color:#ffffff; margin-top:12px;">
+                              Opens on Vimeo
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
 
-        <p class="sign-off">
-          Thank you for being part of this family. Together, we are a fire.
-          <br /><br />
-          In His service,
-          <br />
-          <strong>The Firebrand Nation Team</strong>
-        </p>
-      </main>
+              <div class="label" style="margin-bottom:14px;">Read the full impact report</div>
 
-      <footer class="motto-footer">
-        <p class="motto-text">Alone a flame. Together a fire.</p>
-      </footer>
+              <a href="https://drive.google.com/file/d/1Yypg84_Vbr0TV9YYf2hnBMlKbAZPnp-O/view?usp=sharing" target="_blank" style="text-decoration:none;">
+                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" class="report-box" style="margin-bottom:28px;">
+                  <tr>
+                    <td style="padding:20px;">
+                      <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td valign="top" style="width:56px;">
+                            <div style="width:56px; height:56px; background:#19692b; border-radius:12px; font-family:Arial, Helvetica, sans-serif; font-size:22px; line-height:56px; text-align:center; color:#ffffff;">
+                              📄
+                            </div>
+                          </td>
+                          <td valign="top" style="padding-left:14px;">
+                            <div class="report-title">Mathare Mega Crusade — Full Impact Report</div>
+                            <div class="report-sub" style="margin-top:6px;">Click to open and download the report</div>
+                          </td>
+                          <td valign="middle" align="right" style="width:30px; font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#19692b;">
+                            →
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </a>
 
-      <div class="email-footer">
-        <p>
-          Firebrand Nation | Eternal Life's Restoration Outreach
-          <br />
-          To unsubscribe, reply with "Unsubscribe"
-        </p>
-      </div>
-    </div>
-  </div>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:26px;">
+                <tr>
+                  <td class="divider"></td>
+                </tr>
+              </table>
 
-  <script>
-    function copyText() {
-      const text = `SUBJECT: Will you help us set Mathare on fire with hope?
+              <div class="body-copy" style="text-align:center; margin-bottom:24px;">
+                We are believing for even greater impact this June. Will you partner with us? Every dollar makes a real difference in a real life.
+              </div>
 
-Dear Friend,
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:12px;">
+                <tr>
+                  <td align="center">
+                    <a href="https://secure.givelively.org/donate/eternal-lifes-restoration-outreach" target="_blank" class="cta">
+                      Give Now — Make a Difference
+                    </a>
+                  </td>
+                </tr>
+              </table>
 
-Mathare is one of Nairobi's most densely populated informal settlements — a place filled with people who carry extraordinary resilience, and who deserve to hear a message of hope, love, and transformation.
+              <div class="cta-sub" style="text-align:center; margin-bottom:28px;">
+                Secure donation via Give Lively · All amounts welcome
+              </div>
 
-That is exactly what we are going back to do on June, 2026. And we need you standing with us.
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:26px;">
+                <tr>
+                  <td class="divider"></td>
+                </tr>
+              </table>
 
-"For just $8, one life is reached. For $38, a soul is won. Your gift — any size — joins with others to become something unstoppable."
+              <div class="body-copy" style="margin-bottom:0;">
+                Thank you for being part of this family. Together, we are a fire.
+                <br /><br />
+                In His service,
+                <br />
+                <strong>The Firebrand Nation Team</strong>
+              </div>
+            </td>
+          </tr>
 
-WHAT YOUR GIVING DID LAST TIME:
-- 5,136 people reached with the Gospel
-- 1,097 souls won
-- 450 salvations
-- 875 one-on-one evangelism encounters
-- 345 volunteers mobilised
-- 1,566 people fed with food donations
-- $8 = cost to reach one soul
-- $38 = cost per soul won
+          <tr>
+            <td align="center" class="footer-green" style="padding:18px 20px;">
+              <div class="footer-motto">Alone a flame. Together a fire.</div>
+            </td>
+          </tr>
 
-WATCH THE IMPACT VIDEO:
-https://vimeo.com/1179909099
+          <tr>
+            <td align="center" class="footer-dark" style="padding:18px 20px 22px 20px; border-radius:0 0 18px 18px;">
+              <div class="footer-copy">
+                Firebrand Nation | Eternal Life's Restoration Outreach
+                <br />
+                To unsubscribe, reply with "Unsubscribe"
+              </div>
+            </td>
+          </tr>
 
-READ THE FULL IMPACT REPORT:
-https://drive.google.com/file/d/1Yypg84_Vbr0TV9YYf2hnBMlKbAZPnp-O/view?usp=sharing
-
-We are believing for even greater impact this March. Will you partner with us? Every dollar makes a real difference in a real life.
-
-DONATE NOW:
-https://secure.givelively.org/donate/eternal-lifes-restoration-outreach
-
-Thank you for being part of this family. Together, we are a fire.
-
-In His service,
-The Firebrand Nation Team
-
-Alone a flame. Together a fire.
-Firebrand Nation | Eternal Life's Restoration Outreach
-To unsubscribe, reply with "Unsubscribe"`;
-
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector(".copy-btn");
-        const oldText = btn.textContent;
-        btn.textContent = "Copied!";
-        setTimeout(() => {
-          btn.textContent = oldText;
-        }, 2000);
-      }).catch(() => {
-        alert("Copy failed. Please copy manually.");
-      });
-    }
-  </script>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
